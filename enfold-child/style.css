@@ -1,0 +1,176 @@
+/*
+Theme Name: Enfold Child
+Description: A <a href='http://codex.wordpress.org/Child_Themes'>Child Theme</a> for the Enfold Wordpress Theme. If you plan to do a lot of file modifications we recommend to use this Theme instead of the original Theme. Updating wil be much easier then.
+Version: 1.0
+Author: Kriesi
+Author URI: http://www.kriesi.at
+Template: enfold
+*/
+
+
+@font-face {
+    font-family: 'DINPro';
+    src: url('fonts/DINPro-Medium.eot');
+    src: url('fonts/DINPro-Medium.eot?#iefix') format('embedded-opentype'),
+        url('fonts/DINPro-Medium.woff2') format('woff2'),
+        url('fonts/DINPro-Medium.woff') format('woff'),
+        url('fonts/DINPro-Medium.ttf') format('truetype'),
+        url('fonts/DINPro-Medium.svg#DINPro-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINPro';
+    src: url('fonts/DINPro-Light.eot');
+    src: url('fonts/DINPro-Light.eot?#iefix') format('embedded-opentype'),
+        url('fonts/DINPro-Light.woff2') format('woff2'),
+        url('fonts/DINPro-Light.woff') format('woff'),
+        url('fonts/DINPro-Light.ttf') format('truetype'),
+        url('fonts/DINPro-Light.svg#DINPro-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINPro';
+    src: url('fonts/DINPro-Regular.eot');
+    src: url('fonts/DINPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/DINPro-Regular.woff2') format('woff2'),
+        url('fonts/DINPro-Regular.woff') format('woff'),
+        url('fonts/DINPro-Regular.ttf') format('truetype'),
+        url('fonts/DINPro-Regular.svg#DINPro-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINPro';
+    src: url('fonts/DINPro-Black.eot');
+    src: url('fonts/DINPro-Black.eot?#iefix') format('embedded-opentype'),
+        url('fonts/DINPro-Black.woff2') format('woff2'),
+        url('fonts/DINPro-Black.woff') format('woff'),
+        url('fonts/DINPro-Black.ttf') format('truetype'),
+        url('fonts/DINPro-Black.svg#DINPro-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINPro';
+    src: url('fonts/DINPro-Bold.eot');
+    src: url('fonts/DINPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/DINPro-Bold.woff2') format('woff2'),
+        url('fonts/DINPro-Bold.woff') format('woff'),
+        url('fonts/DINPro-Bold.ttf') format('truetype'),
+        url('fonts/DINPro-Bold.svg#DINPro-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5 , h6, body p { 
+ font-family: "DINPro" !important; 
+}
+#avia-menu .avia-menu-text { font-family: "DINPro" !important; }
+.breadcrumb { font-family: "DINPro" !important; font-size: 16px!important;}
+
+/* Header logo */
+#top .logo img {
+    width: 200px;
+	padding-top: 13px;
+}
+#top .header-scrolled .logo img {
+	padding: 12px 0;
+}
+
+
+/* Main menu */
+.avia-menu-text {
+    letter-spacing: 1px;
+}
+
+/* Sombra */
+.sombra .avia-image-container-inner {
+    box-shadow: 0px 1px 10px #888888;
+ /*   max-width: 275px; */
+    background-color: #ffffff;
+    margin: 10px auto !important;
+}
+
+/* Breadcrumbs */
+.title_container { background-color: white!important; }
+#top .alternate_color.title_container .main-title a { color: #919191; }
+.alternate_color .breadcrumb a { color: #919191; text-transform: uppercase; }
+.trail-end {color: black; text-transform: uppercase; }
+.breadcrumb { left: 45px; }
+.breadcrumb .sep { color: #919191; }
+
+/* Remover barra vertical e colocar icones a branco no top menu */
+#top .social_bookmarks li {
+	border-right-width: 0!important;
+}
+#top .social_bookmarks li a {
+color: white;
+}
+.header_color .social_bookmarks a {color: white;}
+
+/* Alterar cores de search */
+#s {
+background: white !important; border: 1px solid #00afef!important;
+}
+#top .header_color input[type='text'], #top .header_color input[type='input'] {
+color: #00afef !important; border: 1px solid #00afef;
+}
+
+
+.port-wrap .port-item {
+    margin-bottom: 20px;
+}
+
+#search-filter-form-105 ul {
+        display: flex;
+    flex-direction: row;
+}
+.searchandfilter ul li {
+    margin-right: 10px;
+}
+.container_porto {
+        padding-top: 50px;
+    padding-bottom: 50px;
+}
+.porto-fileds {
+    margin: 0;
+}
+.porto-fileds-title {
+    color: #808080;
+}
+.porto-fileds-value:after {
+    content: ', ';
+}
+.porto-fileds-value:last-child:after
+{
+  content: '';
+}
+#carousel ul li {
+    list-style: none;
+        border: none;
+    margin: 0;
+    padding: 0;
+}
+#carousel {
+    max-width: 1200px;
+    margin: 0 auto;
+        border: none;
+}
+.flex-control-nav {
+    display: none;
+}
+.main_color #carousel a {
+    border:none;
+}
+.main_color #carousel ul {
+     border:none;
+}
+.flex-direction-nav a:before {
+    margin-top: 10px;
+}
