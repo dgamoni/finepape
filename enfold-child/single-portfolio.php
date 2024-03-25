@@ -9,12 +9,19 @@
 	 get_header();
 
 
+
  	 if( get_post_meta(get_the_ID(), 'header', true) != 'no') echo avia_title();
  	 
  	 do_action( 'ava_after_main_title' );
 	 ?>
 
 		<div class='container_wrap container_wrap_first main_color <?php avia_layout_class( 'main' ); ?>'>
+			
+			<div class="stretch_full container_wrap alternate_color light_bg_color empty_title  title_container">
+				<div class='container'>
+					<?php echo avia_breadcrumbs(array('separator' => '/', 'richsnippet' => true)); ?>
+				</div> 
+			</div>
 
 			<div class='container_'>
 

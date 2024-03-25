@@ -1,23 +1,30 @@
 <?php
 global $avia_config, $post_loop_count;
 
+//var_dump(get_queried_object());
+
 //$post_loop_count= 1;
 $post_class     = "post-entry-".avia_get_the_id();
 
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
     $q_event = new WP_Query( array(
         'post_type'      => 'portfolio',
-        //'posts_per_page' => 4,
+        //'posts_per_page' => - 1,
         'post_status'    => 'publish',
         'order'          => 'ASC',
         'orderby'        => 'menu_order',
-        'search_filter_id'=> 105,
-        //'paged' => 2
-        //'offset'    => 1
+        //'search_filter_id'=> 105,
+                // Taxonomy Parameters
+        'tax_query' => array(
+            'relation' => 'AND',
+            array(
+                'taxonomy'         => get_queried_object()->taxonomy,
+                'field'            => 'id',
+                'terms'            => array( get_queried_object()->term_taxonomy_id ),
+                //'include_children' => false,
+                //'operator'         => 'NOT IN',
+            )
+        ),
     ) );
-
-//echo "<pre>", print_r($q_event->max_num_pages, 1), "</pre>";
 
 // check if we got posts to display:
 if ($q_event->have_posts()) :
@@ -80,14 +87,7 @@ else:
 
     <article class="entry">
         <header class="entry-content-header">
-            <!-- <h1 class='post-title entry-title'> -->
-            <?php //_e('Nothing Found', 'avia_framework'); ?>
-            <script>
-                jQuery(document).ready(function($) {
-                    $('.porto_more').hide();
-                });
-            </script>
-            <!-- </h1> -->
+            <h1 class='post-title entry-title'><?php _e('Nothing Found', 'avia_framework'); ?></h1>
         </header>
 
         <?php //get_template_part('includes/error404'); ?>
@@ -98,5 +98,5 @@ else:
 <?php
 
 endif;
-//echo avia_pagination('', 'nav');
+echo avia_pagination('', 'nav');
 ?>

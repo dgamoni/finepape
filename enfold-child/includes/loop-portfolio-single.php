@@ -41,7 +41,7 @@ if (have_posts()) :
 					</section>
 					<section class="av_textblock_section " itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
 						<div class="avia_textblock  " style="font-size:14px; " itemprop="text">
-							<p>
+							<p class="porto_tags_wrap">
 								<span style="color: #808080;">
 									<?php			
 									if(has_tag() && is_single())
@@ -50,105 +50,75 @@ if (have_posts()) :
 									} ?>
 								</span>
 							</p>
+							<br /><p>
+								<?php echo do_shortcode( '[ssba-buttons]' ); ?>
+							</p>
 						</div>
 					</section>
 				</div>
 				
 				<?php
-				$area = get_field('area', get_the_ID());
-				$tecnologia = get_field('tecnologia', get_the_ID());
-				$design = get_field('design', get_the_ID());
-				$eventos = get_field('eventos', get_the_ID());
-				$servicos = get_field('servicos', get_the_ID());
-				$materiais = get_field('materiais', get_the_ID());
-				//var_dump($area);
-	                
+				$cliente_desc = get_field('cliente_desc', get_the_ID());
+				$data_desc = get_field('data_desc', get_the_ID());
+				$design_desc = get_field('design_desc', get_the_ID());
+				$area_desc = get_field('area_desc', get_the_ID());
+				$materiais_desc = get_field('materiais_desc', get_the_ID());
+
+                
 	                echo '<footer class="entry-footer flex_column av_one_third">';
 	                
-		                if($area) : ?>
+		                if($cliente_desc) : ?>
 		                	<p class="porto-fileds">
-		                		<span class="porto-fileds-title">Area: </span>
-			                	<?php foreach ($area as $key => $areas) {
-			                		echo '<span class="porto-fileds-value">'.$areas.'</span>';
-			                	} ?>
+		                		<span class="porto-fileds-title">Cliente: </span>
+			                	<?php 
+			                	    echo '<span class="porto-fileds-value">'.$cliente_desc.'</span>';
+			                	?>
 		                	</p>
 		                <?php endif;
-						
-						if($tecnologia) : ?>
+	                
+		                if($data_desc) : ?>
 		                	<p class="porto-fileds">
-		                		<span class="porto-fileds-title">Tecnologia: </span>
-			                	<?php foreach ($tecnologia as $key => $tecnologias) {
-			                		echo '<span class="porto-fileds-value">'.$tecnologias.'</span>';
-			                	} ?>
+		                		<span class="porto-fileds-title">Data: </span>
+			                	<?php 
+			                	    echo '<span class="porto-fileds-value">'.$data_desc.'</span>';
+			                	?>
 		                	</p>
 		                <?php endif;
-						
-						if($design) : ?>
+
+	                
+		                if($design_desc) : ?>
 		                	<p class="porto-fileds">
 		                		<span class="porto-fileds-title">Design: </span>
-			                	<?php foreach ($design as $key => $designs) {
-			                		echo '<span class="porto-fileds-value">'.$designs.'</span>';
-			                	} ?>
+			                	<?php 
+			                	    echo '<span class="porto-fileds-value">'.$design_desc.'</span>';
+			                	?>
 		                	</p>
 		                <?php endif;
-
-						
-						if($eventos) : ?>
+	                
+		                if($area_desc) : ?>
 		                	<p class="porto-fileds">
-		                		<span class="porto-fileds-title">Eventos: </span>
-			                	<?php foreach ($eventos as $key => $eventoss) {
-			                		echo '<span class="porto-fileds-value">'.$eventoss.'</span>';
-			                	} ?>
+		                		<span class="porto-fileds-title">Pre-press: </span>
+			                	<?php 
+			                	    echo '<span class="porto-fileds-value">'.$area_desc.'</span>';
+			                	?>
 		                	</p>
 		                <?php endif;
-						
-						if($servicos) : ?>
+	                
+		                if($materiais_desc) : ?>
 		                	<p class="porto-fileds">
-		                		<span class="porto-fileds-title">Servicos: </span>
-			                	<?php foreach ($servicos as $key => $servicoss) {
-			                		echo '<span class="porto-fileds-value">'.$servicoss.'</span>';
-			                	} ?>
+		                		<span class="porto-fileds-title">Print Management: </span>
+			                	<?php 
+			                	    echo '<span class="porto-fileds-value">'.$materiais_desc.'</span>';
+			                	?>
 		                	</p>
 		                <?php endif;
-						
-						if($materiais) : ?>
-		                	<p class="porto-fileds">
-		                		<span class="porto-fileds-title">Materiais: </span>
-			                	<?php foreach ($materiais as $key => $materiaiss) {
-			                		echo '<span class="porto-fileds-value">'.$materiaiss.'</span>';
-			                	} ?>
-		                	</p>
-		                <?php endif;
-
-
-	                echo '</footer>';
-
-
-
+		                
+	                echo '</footer>';		                
 	            echo '</div>';
 				?>
 
-				<?php 
-//$images = get_field('porto_gallery',get_the_ID());
-//var_dump($images);
-
-if( $images ): ?>
-
-
-    <div id="carousel" class="flexslider">
-        <ul class="slides avia-slideshow">
-            <?php foreach( $images as $image ): ?>
-            	
-	                <li>
-	                    <img src="<?php echo  $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class=" " />
-	                </li>
-	            
-            <?php endforeach; ?>
-        </ul>
-    </div>
-<?php endif; ?>				
-				
-
+			<?php //get_template_part( 'includes/part', 'portfolio-gallery' ); ?>	
+			<?php get_template_part( 'includes/part', 'portfolio-masonry' ); ?>		
 
 			</div>
 			

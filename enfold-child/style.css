@@ -91,11 +91,11 @@ h1, h2, h3, h4, h5 , h6, body p {
 
 /* Sombra */
 .sombra .avia-image-container-inner {
-    box-shadow: 0px 1px 10px #888888;
  /*   max-width: 275px; */
     background-color: #ffffff;
     margin: 10px auto !important;
 }
+
 
 /* Breadcrumbs */
 .title_container { background-color: white!important; }
@@ -112,7 +112,7 @@ h1, h2, h3, h4, h5 , h6, body p {
 #top .social_bookmarks li a {
 color: white;
 }
-.header_color .social_bookmarks a {color: white;}
+#top .header_color .social_bookmarks a {color: white;}
 
 /* Alterar cores de search */
 #s {
@@ -122,17 +122,29 @@ background: white !important; border: 1px solid #00afef!important;
 color: #00afef !important; border: 1px solid #00afef;
 }
 
+/* links homepage */
+.fp_link a { color: black!important; text-decoration: none; }
+.fp_link strong a { color: black!important; text-decoration: none; }
+.fp_link a:hover { color: #00afef!important; text-decoration: none; }
+
+
 
 .port-wrap .port-item {
-    margin-bottom: 20px;
+    margin-bottom: 35px;
 }
 
-#search-filter-form-105 ul {
+#search-filter-form-105 ul,
+#search-filter-form-1216 ul {
         display: flex;
     flex-direction: row;
+        margin-left: 0;
+            flex-flow: wrap;
 }
 .searchandfilter ul li {
     margin-right: 10px;
+}
+.searchandfilter ul li:last-child {
+    margin-right: 0px;
 }
 .container_porto {
         padding-top: 50px;
@@ -151,14 +163,28 @@ color: #00afef !important; border: 1px solid #00afef;
 {
   content: '';
 }
+#_carousel {
+
+}
+#_carousel img {
+    width: 100%;
+    height: auto;
+}
 #carousel ul li {
     list-style: none;
         border: none;
     margin: 0;
     padding: 0;
 }
+.slideer_wrap .slides {
+    text-align: center;
+}
+.slideer_wrap img {
+    /*width: 100%;*/
+}
 #carousel {
     max-width: 1200px;
+    /*max-width: 1000px;*/
     margin: 0 auto;
         border: none;
 }
@@ -173,4 +199,157 @@ color: #00afef !important; border: 1px solid #00afef;
 }
 .flex-direction-nav a:before {
     margin-top: 10px;
+}
+.template-portfolio .page-thumb img {
+    width: 100%;
+}
+.container_ .content {
+    padding-top: 0px;
+}
+.entry-content-header .page-thumb img {
+    border-radius: 0px;
+}
+.container_porto .avia_textblock {
+	margin-top: -0.85em;
+}
+.port-wrap .entry-content-wrapper{
+	font-size: 16px;
+	color: black;
+	font-family: "DINPro" !important;
+	font-weight: 500;
+}
+
+.port-wrap .entry-content-header {
+	padding-bottom: 10px;
+}
+
+.main_color .searchandfilter select:hover {
+    background-color: #00afef !important;
+    color: white !important;
+    cursor: pointer;
+}
+.main_color .searchandfilter select option {
+    background-color: #f8f8f8 !important;
+    color: #919191 !important;
+}
+.main_color .searchandfilter select option:hover {
+    background-color: #00afef !important;
+    color: white !important;
+    cursor: pointer;
+}
+#top .searchandfilter select {
+	line-height: 20px;
+}
+.ssba-wrap div {
+	    display: flex;
+    align-items: baseline;
+    font-size: 16px;
+}
+.ssba img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+    margin-left: 5px;
+}
+.ssba-wrap {
+	padding-top: 10px;
+}
+.port-wrap a:hover {
+    text-decoration: none;
+}
+
+.searchandfilter .selectric {
+    border-radius: 0;
+}
+
+.searchandfilter ul li li {
+    /*padding: 5px;*/
+    padding: 12px 5px;
+    display: block;
+    width: 100%;
+    margin:0;
+        /*line-height: 38px;*/
+        line-height: 18px;
+    color: #444;
+    border-bottom: 1px solid #a1a1a1;
+}
+.searchandfilter ul li li span {
+    display: inline-block;
+    line-height: 18px;
+}
+.searchandfilter ul li li span:hover {
+    color: white !important;
+}
+.searchandfilter ul li li:last-child {
+   border-bottom: none; 
+}
+.main_color .selectric .button {
+    background-color: initial;
+    color: #666666;
+    font-size: 40px;
+/*    right: 10px;
+    top: 7px;*/
+    right: 12px;
+    top: 11px;
+}
+.selectric .button:after {
+    opacity: 0;
+}
+.searchandfilter .selectric-items {
+    background: #f0f0f0;
+}
+.searchandfilter .selectric {
+    background: #f0f0f0;
+}
+.selectric-hover .selectric span {
+    color: white !important;
+}
+.searchandfilter .selectric-wrapper {
+    width: 193px !important;
+}
+.porto_tags_wrap {
+    display: inline-block;
+}
+.port-wrap-more {
+        clear: both;
+    text-align: center;
+}
+a.porto_more {
+    /*color: #b31e24;*/
+    color: #00afef;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* icon list contact page */
+.avia-icon-list .iconlist_icon {
+height: 50px;
+width: 50px;
+line-height: 50px;
+font-size: 25px;
+border-radius: 500px;
+}
+.avia-icon-list .av-iconlist-empty .iconlist_title {
+    margin-top: 10px;
+}
+.avia-icon-list li:hover > a {
+    background: #808080!important;
+}
+
+
+/* portfolio items */
+.image-overlay-inside, .image-overlay.overlay-type-extern {
+display: none;
+}
+.grid-entry .inner-entry {
+margin:0 8%;
+}
+
+
+.image-overlay-inside, .image-overlay.overlay-type-extern {
+display: none;
+}
+.page-id-11 .grid-entry .inner-entry {
+margin:0 8%;
 }

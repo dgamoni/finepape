@@ -1,5 +1,5 @@
 <?php
-global $avia_config, $post_loop_count;
+global $avia_config, $post_loop_count, $off_set;
 
 //$post_loop_count= 1;
 $post_class     = "post-entry-".avia_get_the_id();
@@ -14,10 +14,10 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         'orderby'        => 'menu_order',
         'search_filter_id'=> 105,
         //'paged' => 2
-        //'offset'    => 1
+        'offset'    => $off_set
     ) );
 
-//echo "<pre>", print_r($q_event->max_num_pages, 1), "</pre>";
+//echo "<pre>", print_r($q_event, 1), "</pre>";
 
 // check if we got posts to display:
 if ($q_event->have_posts()) :
@@ -81,12 +81,7 @@ else:
     <article class="entry">
         <header class="entry-content-header">
             <!-- <h1 class='post-title entry-title'> -->
-            <?php //_e('Nothing Found', 'avia_framework'); ?>
-            <script>
-                jQuery(document).ready(function($) {
-                    $('.porto_more').hide();
-                });
-            </script>
+                <?php //_e('Nothing Found', 'avia_framework'); ?>
             <!-- </h1> -->
         </header>
 
